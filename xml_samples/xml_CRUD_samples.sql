@@ -21,18 +21,20 @@ $$<book id="bk101">
 
 
 
-
-
 --Gets all titles in the table
 
 SELECT xpath('//book/title', first_column) from xml_sample;
 
 --Gets all info on a book by title
 
-SELECT * FROM xml_sample WHERE (xpath('//book/title/text()'
+SELECT * FROM xml_sample WHERE (xpath('//book/title/text()
    , first_column))[1]::text = 'Midnight Rain'::text
 
 
 
+UPDATE --cannot do this natively.
 
 
+
+DELETE FROM xml_sample WHERE (xpath('//book/genre/text()'
+   , first_column))[1]::text = 'Fantasy'::text
