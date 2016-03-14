@@ -9,28 +9,29 @@ VALUES ('"active_resource"=>"true"
 
 
 
---time permitting? Suspect it requires a plugin of some kind, not worth covering if that's true
-
-INSERT INTO hstore_samples (documents, notes) VALUES (
-"<TODO put a nested hash here>"
-, "this is a deeply nested hash.")
-
-
-
-
 
 --hstores are strings under the hood and require casting
 
-SELECT * from hstore_samples hs where hs.documents -> 'resource_created_at'::timestamp > '2016-03-13'
+SELECT * from hstore_samples where (documents -> 'resource_created_at')::timestamp > '2016-03-13'
 
---Need to unnest if you only want one portion of the hstore
+--can get all of the values for a certain key:
+
+SELECT (documents -> 'resource_name')::text FROM hstore_samples;
+
+--or convert the entire table to an hstore:
+
+SELECT hstore(t) FROM hstore_samples AS t;
 
 
 
 
+UPDATE hstore_samples SET documents = documents ||  '"active_resource"=>"false"'::hstore
+WHERE documents @> '"resource_name"=>"swimming-swiftly-1234"'::hstore
 
 
 
 
---nifty function, note for later
---SELECT hstore(t) FROM test AS t;
+--this is a strict match:
+
+DELETE from hstore_samples where documents @> '"resource_name"=>"walking-swiftly-1234"'::hstore
+
