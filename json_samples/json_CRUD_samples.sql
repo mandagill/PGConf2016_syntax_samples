@@ -35,5 +35,32 @@ SELECT * FROM json_samples WHERE binary_json ? 'dataSourceId'
 SELECT * FROM json_samples
 WHERE binary_json ->> 'minStartTimeNs' = '1429828653617000000'
 
---TODO cannot figure out how to query on more deeply nested keys,
---e.g. specififc json path
+
+--This is where it gets fun. :)
+--Full json path:
+['point'][0]['value'][0]['fpVal']
+
+SELECT jsonb_object_keys(binary_json) FROM json_samples;
+
+SELECT binary_json->'point'->0->'value' FROM json_samples;
+
+--   hm this is weird:
+-- amg-pgconf-sandbox::DATABASE=> select binary_json->'point'->0->'value' from json_samples;
+--      ?column?
+-- -------------------
+
+--  [{"fpVal": 77.0}]
+-- (2 rows)
+
+SELECT json_extract_path('['point'][0]['value']', binary_json) FROM json_samples WHERE binary_json @> '{ "fpVal": 57.0 }'::jsonb
+
+
+
+
+
+
+
+--for updating a specific value in the document
+jsonb_set()
+
+
