@@ -27,7 +27,7 @@ SELECT xpath('//book/title', first_column) from xml_sample;
 
 --Gets all info on a book by title
 
-SELECT * FROM xml_sample WHERE (xpath('//book/title/text()
+SELECT * FROM xml_sample WHERE (xpath('//book/title/text()'
    , first_column))[1]::text = 'Midnight Rain'::text
 
 
