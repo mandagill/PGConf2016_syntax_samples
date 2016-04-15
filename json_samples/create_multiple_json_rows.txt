@@ -1,0 +1,124 @@
+INSERT INTO json_samples (text_json, notes) VALUES (
+$${
+  "minStartTimeNs": "1429828653617000000",
+  "maxEndTimeNs": "1429839639367000000",
+  "dataSourceId": "derived:com.google.heart_rate.bpm:com.google.android.gms:merge_heart_rate_bpm",
+  "point": [
+    {
+      "modifiedTimeMillis": "1429829706698",
+      "startTimeNanos": "1429828653617000000",
+      "endTimeNanos": "1429828653617000000",
+      "value": [
+        {
+          "fpVal": 77.0
+        }
+      ],
+      "dataTypeName": "com.google.heart_rate.bpm",
+      "originDataSourceId": "raw:com.google.heart_rate.bpm:com.google.android.apps.fitness:manual"
+    },
+    {
+      "modifiedTimeMillis": "1429883660403",
+      "startTimeNanos": "1429832040355000000",
+      "endTimeNanos": "1429832040355000000",
+      "value": [
+        {
+          "fpVal": 57.0
+        }
+      ],
+      "dataTypeName": "com.google.heart_rate.bpm",
+      "originDataSourceId": "raw:com.google.heart_rate.bpm:com.google.android.apps.fitness:manual"
+    },
+    {
+      "modifiedTimeMillis": "1429883660403",
+      "startTimeNanos": "1429839639367000000",
+      "endTimeNanos": "1429839639367000000",
+      "value": [
+        {
+          "fpVal": 59.0
+        }
+      ],
+      "dataTypeName": "com.google.heart_rate.bpm",
+      "originDataSourceId": "raw:com.google.heart_rate.bpm:com.google.android.apps.fitness:manual"
+    }
+  ]
+}$$
+, 'This is in the text json field');
+
+INSERT INTO json_samples (binary_json, notes) VALUES (
+$${
+  "minStartTimeNs": "1429828653617000000",
+  "maxEndTimeNs": "1429839639367000000",
+  "dataSourceId": "derived:com.google.heart_rate.bpm:com.google.android.gms:merge_heart_rate_bpm",
+  "point": [
+    {
+      "modifiedTimeMillis": "1429829706698",
+      "startTimeNanos": "1429828653617000000",
+      "endTimeNanos": "1429828653617000000",
+      "value": [
+        {
+          "fpVal": 77.0
+        }
+      ],
+      "dataTypeName": "com.google.heart_rate.bpm",
+      "originDataSourceId": "raw:com.google.heart_rate.bpm:com.google.android.apps.fitness:manual"
+    },
+    {
+      "modifiedTimeMillis": "1429883660403",
+      "startTimeNanos": "1429832040355000000",
+      "endTimeNanos": "1429832040355000000",
+      "value": [
+        {
+          "fpVal": 57.0
+        }
+      ],
+      "dataTypeName": "com.google.heart_rate.bpm",
+      "originDataSourceId": "raw:com.google.heart_rate.bpm:com.google.android.apps.fitness:manual"
+    },
+    {
+      "modifiedTimeMillis": "1429883660403",
+      "startTimeNanos": "1429839639367000000",
+      "endTimeNanos": "1429839639367000000",
+      "value": [
+        {
+          "fpVal": 59.0
+        }
+      ],
+      "dataTypeName": "com.google.heart_rate.bpm",
+      "originDataSourceId": "raw:com.google.heart_rate.bpm:com.google.android.apps.fitness:manual"
+    }
+  ]
+}$$
+, 'This is in the binary json field');
+
+INSERT INTO json_samples (text_json, notes) VALUES (
+$${
+  "catalog": [
+    {
+      "author": "Gambardella, Matthew",
+      "title": "XML Developer's Guide",
+      "genre": "Computer",
+      "price": "44.95",
+      "publish_date": "2000-10-01",
+      "description": "An in-depth look at creating /n applications with XML."
+    },
+
+    {
+      "author": "Ralls, Kim",
+      "title": "Midnight Rain",
+      "genre": "Fantasy",
+      "price": "5.95",
+      "publish_date": "2000-12-16",
+      "description": "A former architect battles corporate /n zombies, an evil sorceress, and her own childhood
+      /n to become queen of the world."
+    },
+
+    {
+
+    },
+
+    {
+
+    }
+  ]
+}$$
+, 'This is in the binary json field');

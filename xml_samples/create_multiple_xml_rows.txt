@@ -1,4 +1,4 @@
-INSERT INTO xml_samples (data, comments) values (
+INSERT INTO xml_samples (documents, comments) values (
 $$<book id="bk101">
       <author>Gambardella, Matthew</author>
       <title>XML Developer\'s Guide</title>
@@ -9,7 +9,7 @@ $$<book id="bk101">
       with XML.</description>
    </book>$$, 'one book per row');
 
-INSERT INTO xml_samples (data, comments) values (
+INSERT INTO xml_samples (documents, comments) values (
 $$<book id="bk102">
       <author>Ralls, Kim</author>
       <title>Midnight Rain</title>
@@ -21,7 +21,7 @@ $$<book id="bk102">
       of the world.</description>
    </book>$$, 'one book per row');
 
-INSERT INTO xml_samples (data, comments) values (
+INSERT INTO xml_samples (documents, comments) values (
 $$<book id="bk103">
       <author>Corets, Eva</author>
       <title>Maeve Ascendant</title>
@@ -33,7 +33,7 @@ $$<book id="bk103">
       foundation for a new society.</description>
    </book>$$, 'one book per row');
 
-INSERT INTO xml_samples (data, comments) values (
+INSERT INTO xml_samples (documents, comments) values (
 $$<book id="bk104">
       <author>Corets, Eva</author>
       <title>Oberon\'s Legacy</title>
@@ -46,7 +46,7 @@ $$<book id="bk104">
       Ascendant.</description>
    </book>$$, 'one book per row');
 
-INSERT INTO xml_samples (data, comments) values (
+INSERT INTO xml_samples (documents, comments) values (
 $$<book id="bk105">
       <author>Corets, Eva</author>
       <title>The Sundered Grail</title>

@@ -1,3 +1,9 @@
+CREATE TABLE xml_samples (
+    id bigserial PRIMARY KEY,
+    documents xml,
+    comments text
+)
+
 INSERT INTO xml_sample (first_column, second_column) values (
 XMLPARSE( DOCUMENT $$<?xml version="1.0"?>
 <catalog>
@@ -7,7 +13,7 @@ XMLPARSE( DOCUMENT $$<?xml version="1.0"?>
 
 --alternatively...
 
-INSERT INTO xml_sample (first_column, second_column) values (
+INSERT INTO xml_sample (documents, comments) values (
 $$<book id="bk101">
       <author>Gambardella, Matthew</author>
       <title>XML Developer\'s Guide</title>
@@ -23,12 +29,12 @@ $$<book id="bk101">
 
 --Gets all titles in the table
 
-SELECT xpath('//book/title', first_column) from xml_sample;
+SELECT xpath('//book/title', documents) from xml_samples
 
 --Gets all info on a book by title
 
-SELECT * FROM xml_sample WHERE (xpath('//book/title/text()'
-   , first_column))[1]::text = 'Midnight Rain'::text
+SELECT * FROM xml_samples WHERE (xpath('//book/title/text()'
+   , documents))[1]::text = 'Midnight Rain'::text
 
 
 

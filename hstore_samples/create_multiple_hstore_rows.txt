@@ -1,25 +1,25 @@
-INSERT INTO hstore_samples (documents, notes)
+INSERT INTO hstore_samples (documents, comments)
 VALUES ('"active_resource"=>"true"
   ,"resource_name"=>"swimming-swiftly-1234"
   ,"resource_size_in_mb"=>"120"
   ,"resource_created_at"=>"2016-03-14 17:20:47.216862"'
 , 'this is a straight up K/V hash');
 
-INSERT INTO hstore_samples (documents, notes)
+INSERT INTO hstore_samples (documents, comments)
 VALUES ('"active_resource"=>"true"
   ,"resource_name"=>"walking-slowly-1234"
   ,"resource_size_in_mb"=>"65"
   ,"resource_created_at"=>"2016-02-29 17:20:47.216862"'
 , 'this is a straight up K/V hash');
 
-INSERT INTO hstore_samples (documents, notes)
+INSERT INTO hstore_samples (documents, comments)
 VALUES ('"active_resource"=>"true"
   ,"resource_name"=>"reading-gracefully-1234"
   ,"resource_size_in_mb"=>"30"
   ,"resource_created_at"=>"2015-05-31 17:20:47.216862"'
 , 'this is a straight up K/V hash');
 
-INSERT INTO hstore_samples (documents, notes)
+INSERT INTO hstore_samples (documents, comments)
 VALUES ('"active_resource"=>"true"
   ,"resource_name"=>"fetching-carefully-1234"
   ,"resource_size_in_mb"=>"80"

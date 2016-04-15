@@ -1,4 +1,4 @@
-INSERT INTO xml_samples (data, comments) values (
+INSERT INTO xml_samples (documents, comments) values (
 XMLPARSE( DOCUMENT $$<?xml version="1.0"?>
 <catalog>
    <book id="bk101">
