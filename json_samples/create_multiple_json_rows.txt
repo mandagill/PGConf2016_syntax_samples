@@ -90,7 +90,7 @@ $${
 }$$
 , 'This is in the binary json field');
 
-INSERT INTO json_samples (text_json, notes) VALUES (
+INSERT INTO json_samples (binary_json, notes) VALUES (
 $${
   "catalog": [
     {
@@ -99,7 +99,7 @@ $${
       "genre": "Computer",
       "price": "44.95",
       "publish_date": "2000-10-01",
-      "description": "An in-depth look at creating /n applications with XML."
+      "description": "An in-depth look at creating applications with XML."
     },
 
     {
@@ -108,16 +108,16 @@ $${
       "genre": "Fantasy",
       "price": "5.95",
       "publish_date": "2000-12-16",
-      "description": "A former architect battles corporate /n zombies, an evil sorceress, and her own childhood
-      /n to become queen of the world."
+      "description": "A former architect battles corporate zombies to become queen of the world."
     },
 
     {
-
-    },
-
-    {
-
+      "author": "Corets, Eva",
+      "title": "Maeve Ascendant",
+      "genre": "Fantasy",
+      "price": "14.95",
+      "publish_date": "2000-11-17",
+      "description": "Survivors of the collapse of a nanotechnology society in England lay the foundation for a new society."
     }
   ]
 }$$
