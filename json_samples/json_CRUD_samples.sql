@@ -36,59 +36,6 @@ SELECT * FROM json_samples WHERE binary_json ? 'dataSourceId'
 SELECT * FROM json_samples
 WHERE binary_json ->> 'minStartTimeNs' = '1429828653617000000'
 
+
 UPDATE json_samples SET binary_json = binary_json ||
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
---Can select at top level. This SHOULD check if the string is a subset of the json.
---TODO figure out why this returns no rows - Cynthia helped with this, update at work
-
-SELECT * FROM json_samples WHERE text_json::jsonb @> '{ "fpVal": 57.0 }'
-SELECT * FROM json_samples WHERE binary_json @> '{ "fpVal": 57.0 }'::jsonb
-
-
-
-
-
-
---This is where it gets fun. :)
-
-
-
-
-
-
---   hm this is weird:
--- amg-pgconf-sandbox::DATABASE=> select binary_json->'point'->0->'value' from json_samples;
---      ?column?
--- -------------------
-
---  [{"fpVal": 77.0}]
--- (2 rows)
-
-SELECT json_extract_path('['point'][0]['value']', binary_json) FROM json_samples WHERE binary_json @> '{ "fpVal": 57.0 }'::jsonb
-
-SELECT binary_json::json->'point' from json_samples
-
-
-
-
-
---for updating a specific value in the document
-jsonb_set()
-
-
+--likely need jsonb_set()
