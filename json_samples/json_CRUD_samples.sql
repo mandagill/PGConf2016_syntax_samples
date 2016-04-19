@@ -36,6 +36,7 @@ SELECT * FROM json_samples WHERE binary_json ? 'dataSourceId'
 SELECT * FROM json_samples
 WHERE binary_json ->> 'minStartTimeNs' = '1429828653617000000'
 
+--Can update at top level:
 
 UPDATE json_samples
 SET binary_json = binary_json || '{"address": {
@@ -44,4 +45,12 @@ SET binary_json = binary_json || '{"address": {
     "state": "CA",
     "postalCode": "94123"
   } }'
+WHERE binary_json ->> 'lastName' = 'Gilmore'
+
+--or use jsonb_set() to drill down the tree:
+
+SELECT jsonb_set(binary_json::jsonb
+  , '{address, streetAddress}'
+  , '"456 Lorem Ipsum St"'::jsonb)
+FROM json_samples
 WHERE binary_json ->> 'lastName' = 'Gilmore'
