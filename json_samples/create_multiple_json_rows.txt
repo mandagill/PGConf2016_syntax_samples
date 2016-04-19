@@ -122,3 +122,33 @@ $${
   ]
 }$$
 , 'This is in the binary json field');
+
+INSERT INTO json_samples (binary_json, notes) VALUES (
+$$
+{
+  "firstName": "Amanda",
+  "lastName": "Gilmore",
+  "isAlive": true,
+  "age": 30,
+  "address": {
+    "streetAddress": "333 Adams Street",
+    "city": "Brooklyn",
+    "state": "NY",
+    "postalCode": "11201"
+  },
+  "phoneNumbers": [
+    {
+      "type": "home",
+      "number": "917 555-1234"
+    },
+    {
+      "type": "office",
+      "number": "646 555-4567"
+    },
+    {
+      "type": "mobile",
+      "number": "123 456-7890"
+    }
+  ]
+}
+$$, 'Fake profile info for me')

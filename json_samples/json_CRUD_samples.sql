@@ -37,5 +37,11 @@ SELECT * FROM json_samples
 WHERE binary_json ->> 'minStartTimeNs' = '1429828653617000000'
 
 
-UPDATE json_samples SET binary_json = binary_json ||
---likely need jsonb_set()
+UPDATE json_samples
+SET binary_json = binary_json || '{"address": {
+    "streetAddress": "123 Test Street",
+    "city": "Oakland",
+    "state": "CA",
+    "postalCode": "94123"
+  } }'
+WHERE binary_json ->> 'lastName' = 'Gilmore'
