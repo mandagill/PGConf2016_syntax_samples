@@ -33,8 +33,8 @@ SELECT hstore(t) FROM hstore_samples AS t
 
 --Pulling multiple values from the document
 
-SELECT (documents -> 'resource_name')::text
-, (documents -> 'active_resource')::text
+SELECT (documents -> 'resource_name')::text as resource_name
+, (documents -> 'active_resource')::text as is_active
 FROM hstore_samples
 
 --Cannot do this in place, hence the || operator
@@ -44,7 +44,7 @@ SET documents = documents || '"active_resource"=>"false"'::hstore
 WHERE documents @> '"resource_name"=>"swimming-swiftly-1234"'::hstore
 
 
---this is a strict match:
+--use the string containment operator for strict matching:
 
 DELETE FROM hstore_samples
 WHERE documents @> '"resource_name"=>"walking-slowly-1234"'::hstore

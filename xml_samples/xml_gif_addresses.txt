@@ -1,0 +1,10 @@
+CREATE -> https://asciinema.org/a/94vdzvtaq91wfuy7czxfebhse <script type="text/javascript" src="https://asciinema.org/a/94vdzvtaq91wfuy7czxfebhse.js" id="asciicast-94vdzvtaq91wfuy7czxfebhse" async></script>
+READ ->
+
+https://asciinema.org/api/asciicasts/94vdzvtaq91wfuy7czxfebhse
+
+
+
+ CREATE and READ:
+https://asciinema.org/a/8p4pygl5zr2rqdhn0nihhdomz
+

@@ -1,0 +1,2 @@
+CREATE and READ -> https://asciinema.org/a/2jjzokso646cabmxtpuy589x0
+UPDATE and DELETE -> https://asciinema.org/a/bsnwb2w9ir7j8up3v1dnl06uz
