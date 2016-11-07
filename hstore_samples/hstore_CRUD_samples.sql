@@ -27,7 +27,7 @@ FROM hstore_samples
 
 --or convert the entire table to an hstore:
 
-SELECT hstore(t) FROM hstore_samples AS t
+SELECT hstore(t) FROM xml_samples AS t
 
 
 

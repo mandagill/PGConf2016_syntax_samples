@@ -37,6 +37,9 @@ SELECT * FROM json_samples
 WHERE binary_json ->> 'minStartTimeNs' = '1429828653617000000'
 
 
+SELECT binary_json->'point'->0->'value'->0->'fpVal' as bpm FROM json_samples
+WHERE binary_json ->> 'minStartTimeNs' = '1429828653617000000'
+
 
 
 --Can update at top level:
