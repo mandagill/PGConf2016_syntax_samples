@@ -36,13 +36,49 @@ SELECT * FROM json_samples WHERE binary_json ? 'dataSourceId'
 SELECT * FROM json_samples
 WHERE binary_json ->> 'minStartTimeNs' = '1429828653617000000'
 
-
 SELECT binary_json->'point'->0->'value'->0->'fpVal' as bpm FROM json_samples
 WHERE binary_json ->> 'minStartTimeNs' = '1429828653617000000'
 
 
 
+
+INSERT INTO json_samples (binary_json, notes) VALUES (
+$${
+  "firstName": "Amanda",
+  "lastName": "Gilmore",
+  "isAlive": true,
+  "age": 31,
+  "address": {
+    "streetAddress": "255 South Airport Blvd",
+    "city": "South San Francisco",
+    "state": "CA",
+    "postalCode": "94080"
+  },
+  "phoneNumbers": [
+    {
+      "type": "home",
+      "number": "415 555-1234"
+    },
+    {
+      "type": "office",
+      "number": "415 555-4567"
+    },
+    {
+      "type": "mobile",
+      "number": "123 456-7890"
+    }
+  ]
+}$$, 'Fake profile info for me')
+
 --Can update at top level:
+
+SELECT * FROM json_samples
+WHERE binary_json ? 'firstName'
+
+SELECT jsonb_pretty(t.binary_json)
+FROM json_samples t
+WHERE binary_json ? 'firstName'
+
 
 UPDATE json_samples
 SET binary_json = binary_json || '{"address": {
